@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width,initial-scale=1" />
+    <title>Greeting Boxes — Assignment 1</title>
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1 id="greeting">Hello</h1>
+      </header>
+      <div class="controls">
+        <input
+          id="nameInput"
+          type="text"
+          placeholder="Enter your name"
+          aria-label="Your name"
+        />
+        <button id="greetBtn">Greet</button>
+      </div>
+      <div class="boxes">
+        <div class="color-box" data-color="red">red</div>
+        <div class="color-box" data-color="blue">blue</div>
+        <div class="color-box" data-color="green">green</div>
+        <div class="color-box" data-color="yellow">yellow</div>
+      </div>
+      <p class="note">
+        Click a box to change its background to the named color.
+      </p>
+    </div>
+    <script src="script.js" defer></script>
+  </body>
+</html>
