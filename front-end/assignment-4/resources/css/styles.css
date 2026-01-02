@@ -1,0 +1,75 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+html{
+    background-color: #fff;
+    color: #555;
+    font-family: sans-serif;
+    font-weight: 300;
+    font-size: 20px;
+    text-rendering: optimizeLegibility;
+}
+.navbar{
+    background-color: red;
+    color: #fff;
+    flex-direction: row;
+    text-align: center;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.main-content{
+    background-color: yellow;
+    padding-left: 2%;
+    padding-right: 2%;
+    display: flex;
+    text-align: center;
+    height: 70vh;
+}
+.achievements{
+    background-color: blue;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 25vh;
+}
+.order-form{
+    background-color: green;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+}
+.selling-points{
+    background-color: purple;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 33vh;
+}
+.subsription{
+    background-color: orange;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 33vh;
+}
+.footer{
+    background-color: black;
+    color: #fff;
+    text-align: center;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 33vh;
+}
