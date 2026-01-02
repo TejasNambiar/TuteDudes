@@ -36,6 +36,21 @@ html{
     justify-content: center;
     align-items: center;
     height: 25vh;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+#achievement-header{
+    width: 40%;
+    text-align: left;
+    font-size: 1.3rem;
+} 
+#achievement{
+    width: 20%;
+    
+}
+.sub-text{    
+    padding-top: 10px;
+    font-size: 0.8rem;
 }
 .order-form{
     background-color: green;
@@ -55,6 +70,15 @@ html{
     align-items: center;
     height: 33vh;
 }
+.span-1-of-4{
+    width: 23.8%;
+}
+.point{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
 .subsription{
     background-color: orange;
     color: #fff;
@@ -64,12 +88,39 @@ html{
     align-items: center;
     height: 33vh;
 }
+.sub-header{
+    width: 45%;
+    font-size: 1.1rem;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+.sub-content{
+    width: 55%;
+    text-align: left;
+}
 .footer{
     background-color: black;
     color: #fff;
     text-align: center;
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
     height: 33vh;
+    padding-left: 2%;
+    padding-right: 2%;
+}
+.sub-content input[type="text"], .sub-content input[type="email"]{
+    padding: 20px 5px;
+    font-size: 0.9rem;
+    border-radius: 10px;
+    size: 10px;
+    border: none;
+    margin-bottom: 10px;
+}
+ .sub-content button{
+    padding: 20px 84px;
+    font-size: 0.9rem;
+    border-radius: 10px;
+    border: none;
+    cursor: pointer;
 }
