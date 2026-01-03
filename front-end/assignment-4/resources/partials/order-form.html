@@ -6,42 +6,19 @@
     </section>
     <hr />
     <section class="form-content">
-      <form id="order-form">
-        <label>
-          Full name
-          <input type="text" id="customer-name" required />
-        </label>
-        <label>
-          Phone
-          <input type="tel" id="customer-phone" />
-        </label>
-        <label>
-          Service
-          <select id="service-type">
-            <option value="wash">Wash (per kg)</option>
-            <option value="dryclean">Dryclean (per kg)</option>
-          </select>
-        </label>
-        <label>
-          Weight (kg)
-          <input
-            type="number"
-            id="weight"
-            min="0"
-            step="0.1"
-            value="1"
-            required
-          />
-        </label>
-        <label> <input type="checkbox" id="iron" /> Add ironing (flat) </label>
-        <button type="button" id="calculate">Calculate Bill</button>
-      </form>
+      <!-- Service items list -->
+      <div class="extras-list" id="extras-list">
+        <!-- items will be rendered here by JS -->
+      </div>
     </section>
   </section>
   <section class="bill-summary">
     <h2>Bill Summary</h2>
-    <div class="bill-row">
-      <span>Subtotal:</span> <span id="subtotal">$0.00</span>
+    <div id="service-line" class="bill-row">
+      <span>Service:</span> <span id="service-charge">$0.00</span>
+    </div>
+    <div class="bill-items" id="bill-items">
+      <!-- added items will appear here -->
     </div>
     <div class="bill-row">
       <span>Ironing:</span> <span id="iron-cost">$0.00</span>
