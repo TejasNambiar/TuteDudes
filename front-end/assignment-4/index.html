@@ -5,7 +5,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>Document</title>
     <link rel="stylesheet" href="vendors/css/normalize.css" />
-    <link rel="stylesheet" href="resources\css\styles.css" />
+    <link rel="stylesheet" href="resources/css/styles.css" />
   </head>
   <body>
     <nav class="navbar">
@@ -31,30 +31,78 @@
       </section>
     </main>
     <section class="achievements">
-      <section id="achievement-header">
+      <section class="achievement-header">
         <h2>Our Achievements</h2>
       </section>
-      <section id="achievement">
+      <section class="achievement-item">
         <h3>15+</h3>
         <p class="sub-text">Laundry Services</p>
       </section>
-      <section id="achievement">
+      <section class="achievement-item">
         <h3>240+</h3>
         <p class="sub-text">Happy Customers</p>
       </section>
-      <section id="achievement">
+      <section class="achievement-item">
         <h3>2+ Yrs</h3>
         <p class="sub-text">Experience</p>
       </section>
     </section>
     <section class="order-form">
       <section class="selection-side">
-        <h2>Order Form</h2>
-        <p>Please fill out the form below to place your order.</p>
+        <section class="form-header">
+          <h2>Our Services</h2>
+          <p>Click on add to cart to add services</p>
+        </section>
+        <hr />
+        <section class="form-content">
+          <form id="order-form">
+            <label>
+              Full name
+              <input type="text" id="customer-name" required />
+            </label>
+            <label>
+              Phone
+              <input type="tel" id="customer-phone" />
+            </label>
+            <label>
+              Service
+              <select id="service-type">
+                <option value="wash">Wash (per kg)</option>
+                <option value="dryclean">Dryclean (per kg)</option>
+              </select>
+            </label>
+            <label>
+              Weight (kg)
+              <input
+                type="number"
+                id="weight"
+                min="0"
+                step="0.1"
+                value="1"
+                required
+              />
+            </label>
+            <label>
+              <input type="checkbox" id="iron" /> Add ironing (flat)
+            </label>
+            <button type="button" id="calculate">Calculate Bill</button>
+          </form>
+        </section>
       </section>
       <section class="bill-summary">
         <h2>Bill Summary</h2>
-        <p>Here is a summary of your order details.</p>
+        <div class="bill-row">
+          <span>Subtotal:</span> <span id="subtotal">$0.00</span>
+        </div>
+        <div class="bill-row">
+          <span>Ironing:</span> <span id="iron-cost">$0.00</span>
+        </div>
+        <div class="bill-row">
+          <span>Delivery:</span> <span id="delivery">$0.00</span>
+        </div>
+        <div class="bill-row">
+          <strong>Total:</strong> <strong id="total">$0.00</strong>
+        </div>
       </section>
     </section>
     <section class="selling-points row">
@@ -75,32 +123,33 @@
         <p>sdfsfsd</p>
       </section>
     </section>
-    <section class="subsription">
+    <section class="subscription">
       <section class="sub-header">
         <h2>Subscribe to our Newsletter</h2>
       </section>
       <section class="sub-content">
         <input type="text" placeholder="full name" />
         <input type="email" placeholder="email" />
-        <button>Subscribe</button>
+        <button id="subscribe">Subscribe</button>
       </section>
     </section>
     <footer class="footer">
-      <section id="point span-1-of-4">
+      <section class="footer-point">
         <h2>Our Achievements</h2>
       </section>
-      <section id="point span-1-of-4">
+      <section class="footer-point">
         <p><b>15+</b></p>
         <p>Laundry Services</p>
       </section>
-      <section id="point span-1-of-4">
+      <section class="footer-point">
         <p><b>240+</b></p>
         <p>Happy Customers</p>
       </section>
-      <section id="point span-1-of-4">
+      <section class="footer-point">
         <p><b>2+ Yrs</b></p>
         <p>Experience</p>
       </section>
     </footer>
+    <script src="resources/js/app.js"></script>
   </body>
 </html>

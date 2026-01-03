@@ -29,7 +29,7 @@ html{
     height: 70vh;
 }
 .achievements{
-    background-color: blue;
+    background-color: #0b5bd7;
     color: #fff;
     text-align: center;
     display: flex;
@@ -39,27 +39,27 @@ html{
     padding-left: 2%;
     padding-right: 2%;
 }
-#achievement-header{
+.achievement-header{
     width: 40%;
     text-align: left;
     font-size: 1.3rem;
-} 
-#achievement{
+}
+.achievement-item{
     width: 20%;
-    
 }
 .sub-text{    
     padding-top: 10px;
     font-size: 0.8rem;
 }
 .order-form{
-    background-color: green;
+    background-color: #2ecc71;
     color: #fff;
     text-align: center;
     display: flex;
     justify-content: center;
-    align-items: center;
-    height: 100vh;
+    align-items: flex-start;
+    gap: 20px;
+    padding: 40px 2%;
 }
 .selling-points{
     background-color: purple;
@@ -79,7 +79,9 @@ html{
     justify-content: center;
     align-items: center;
 }
-.subsription{
+
+/* Subscription styles */
+.subscription{
     background-color: orange;
     color: #fff;
     text-align: center;
@@ -87,10 +89,13 @@ html{
     justify-content: center;
     align-items: center;
     height: 33vh;
+    padding-left: 2%;
+    padding-right: 2%;
 }
 .sub-header{
     width: 45%;
     font-size: 1.1rem;
+    text-align: left;
     padding-left: 2%;
     padding-right: 2%;
 }
@@ -98,6 +103,8 @@ html{
     width: 55%;
     text-align: left;
 }
+
+/* Footer styles */
 .footer{
     background-color: black;
     color: #fff;
@@ -110,17 +117,72 @@ html{
     padding-right: 2%;
 }
 .sub-content input[type="text"], .sub-content input[type="email"]{
-    padding: 20px 5px;
+    padding: 12px 10px;
     font-size: 0.9rem;
-    border-radius: 10px;
-    size: 10px;
+    border-radius: 6px;
     border: none;
     margin-bottom: 10px;
+    display: block;
+    width: 100%;
 }
- .sub-content button{
-    padding: 20px 84px;
+.sub-content button{
+    padding: 12px 24px;
     font-size: 0.9rem;
-    border-radius: 10px;
+    border-radius: 6px;
     border: none;
     cursor: pointer;
+}
+
+/* Order form specific styles */
+.selection-side{
+    width: 40%;
+    text-align: left;
+}
+.selection-side form label{
+    display: block;
+    margin-bottom: 12px;
+    font-size: 0.95rem;
+}
+.selection-side input[type="text"], .selection-side input[type="tel"], .selection-side input[type="number"], .selection-side select{
+    width: 100%;
+    padding: 8px 10px;
+    margin-top: 6px;
+    border-radius: 6px;
+    border: none;
+}
+.selection-side button{
+    margin-top: 10px;
+    padding: 10px 16px;
+    border-radius: 6px;
+    border: none;
+    cursor: pointer;
+}
+.bill-summary{
+    width: 30%;
+    text-align: left;
+    background: rgba(255,255,255,0.06);
+    padding: 16px;
+    border-radius: 6px;
+}
+.bill-row{
+    display:flex;
+    justify-content:space-between;
+    padding:6px 0;
+    font-size:0.95rem;
+}
+
+/* Footer points */
+.footer-point{
+    width: 23.8%;
+}
+
+/* Responsive */
+@media (max-width: 900px){
+    .main-content{height: auto;flex-direction:column}
+    .achievements{flex-direction:column;height:auto}
+    .achievement-header, .achievement-item{width:100%;margin:8px 0}
+    .order-form{flex-direction:column;align-items:center}
+    .selection-side, .bill-summary{width:90%}
+    .selling-points{flex-direction:column;height:auto}
+    .span-1-of-4{width:100%}
 }
