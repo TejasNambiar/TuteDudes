@@ -137,6 +137,9 @@ html{
 .selection-side{
     width: 40%;
     text-align: left;
+    background: rgba(255,255,255,0.06);
+    padding: 16px;
+    border-radius: 6px;
 }
 .selection-side form label{
     display: block;
