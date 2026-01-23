@@ -6,25 +6,57 @@
     </section>
     <hr />
     <section class="form-content">
-      <!-- Service items list -->
+      <!-- Service items list (static for easier styling) -->
       <div class="extras-list" id="extras-list">
-        <!-- items will be rendered here by JS -->
+        <div class="extras-item">
+          <div class="extras-left"><strong>Cleaning</strong></div>
+          <div class="extras-price">$7.00</div>
+          <div class="extras-action">
+            <button data-add-id="cleaning" class="extras-btn">Add</button>
+          </div>
+        </div>
+        <div class="extras-item">
+          <div class="extras-left"><strong>Folding</strong></div>
+          <div class="extras-price">$3.00</div>
+          <div class="extras-action">
+            <button data-add-id="folding" class="extras-btn">Add</button>
+          </div>
+        </div>
+        <div class="extras-item">
+          <div class="extras-left"><strong>Stain Removal</strong></div>
+          <div class="extras-price">$12.00</div>
+          <div class="extras-action">
+            <button data-add-id="stain" class="extras-btn">Add</button>
+          </div>
+        </div>
+        <div class="extras-item">
+          <div class="extras-left"><strong>Leather & Suede</strong></div>
+          <div class="extras-price">$25.00</div>
+          <div class="extras-action">
+            <button data-add-id="leather" class="extras-btn">Add</button>
+          </div>
+        </div>
+        <div class="extras-item">
+          <div class="extras-left"><strong>Wedding Dress</strong></div>
+          <div class="extras-price">$60.00</div>
+          <div class="extras-action">
+            <button data-add-id="wedding" class="extras-btn">Add</button>
+          </div>
+        </div>
+        <div class="extras-item">
+          <div class="extras-left"><strong>Express Service</strong></div>
+          <div class="extras-price">$10.00</div>
+          <div class="extras-action">
+            <button data-add-id="express" class="extras-btn">Add</button>
+          </div>
+        </div>
       </div>
     </section>
   </section>
   <section class="bill-summary">
     <h2>Bill Summary</h2>
-    <div id="service-line" class="bill-row">
-      <span>Service:</span> <span id="service-charge">$0.00</span>
-    </div>
     <div class="bill-items" id="bill-items">
       <!-- added items will appear here -->
-    </div>
-    <div class="bill-row">
-      <span>Ironing:</span> <span id="iron-cost">$0.00</span>
-    </div>
-    <div class="bill-row">
-      <span>Delivery:</span> <span id="delivery">$0.00</span>
     </div>
     <div class="bill-row">
       <strong>Total:</strong> <strong id="total">$0.00</strong>

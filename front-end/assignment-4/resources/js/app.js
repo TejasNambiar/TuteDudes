@@ -33,79 +33,68 @@ function createApp() {
     return document.querySelector(sel);
   }
 
-  function renderExtras() {
-    const list = $("#extras-list");
-    if (!list) return;
-    list.innerHTML = state.services
-      .map(
-        (service) =>
-          `<div class="extras-item"><div class="extras-left"><strong>${
-            service.name
-          }</strong></div><div class="extras-price">${format(
-            service.price
-          )}</div><div class="extras-action"><button data-add-id="${
-            service.id
-          }">Add</button></div></div>`
-      )
-      .join("");
-  }
-
+  // render items added to cart inside the bill summary (read-only there)
   function renderBillItems() {
     const container = $("#bill-items");
     if (!container) return;
     container.innerHTML = state.cart
       .map(
-        (item, i) =>
+        (item) =>
           `<div class="bill-item"><span>${item.name}</span><span>${format(
             item.price
-          )}</span><button data-remove-idx="${i}" class="remove">×</button></div>`
+          )}</span></div>`
       )
       .join("");
     renderTotals();
+    // update extras buttons to reflect current cart state
+    state.services.forEach((s) => setButtonState(s.id, isInCart(s.id)));
   }
 
   function renderTotals() {
-    const weight = parseFloat($("#weight")?.value || "0") || 0;
-    const service = $("#service-type")?.value || "wash";
-    const iron = !!$("#iron")?.checked;
-    const rates = { wash: 5, dryclean: 8 };
-    const serviceCharge = weight * (rates[service] || rates.wash);
     const extrasTotal = state.cart.reduce((s, x) => s + x.price, 0);
-    const ironCost = iron ? 5 : 0;
-    const delivery = serviceCharge + extrasTotal < 20 ? 5 : 0;
-    const total = serviceCharge + extrasTotal + ironCost + delivery;
-    $("#service-charge") &&
-      ($("#service-charge").textContent = format(serviceCharge));
-    $("#iron-cost") && ($("#iron-cost").textContent = format(ironCost));
-    $("#delivery") && ($("#delivery").textContent = format(delivery));
+    const total = extrasTotal;
     $("#total") && ($("#total").textContent = format(total));
   }
 
+  function isInCart(id) {
+    return state.cart.some((x) => x.id === id);
+  }
   function addToCartById(id) {
     const service = state.services.find((e) => e.id === id);
     if (!service) return;
-    state.cart.push(service);
+    if (!isInCart(id)) state.cart.push(service);
+    renderBillItems();
+  }
+  function removeFromCartById(id) {
+    state.cart = state.cart.filter((x) => x.id !== id);
     renderBillItems();
   }
 
-  function removeFromCart(index) {
-    if (index >= 0 && index < state.cart.length) {
-      state.cart.splice(index, 1);
-      renderBillItems();
+  function setButtonState(id, added) {
+    const btn = document.querySelector(`button[data-add-id="${id}"]`);
+    if (!btn) return;
+    if (added) {
+      btn.classList.add("added");
+      btn.textContent = "Remove Item";
+    } else {
+      btn.classList.remove("added");
+      btn.textContent = "Add";
     }
   }
 
   function attachHandlers() {
-    // delegate add / remove buttons
+    // delegate add button clicks — toggle in cart and update button state
     document.addEventListener("click", (e) => {
       const add = e.target.closest && e.target.closest("button[data-add-id]");
       if (add) {
-        addToCartById(add.getAttribute("data-add-id"));
-      }
-      const rem =
-        e.target.closest && e.target.closest("button[data-remove-idx]");
-      if (rem) {
-        removeFromCart(Number(rem.getAttribute("data-remove-idx")));
+        const id = add.getAttribute("data-add-id");
+        if (isInCart(id)) {
+          removeFromCartById(id);
+          setButtonState(id, false);
+        } else {
+          addToCartById(id);
+          setButtonState(id, true);
+        }
       }
     });
 
@@ -135,7 +124,6 @@ function createApp() {
 
   return {
     init: () => {
-      renderExtras();
       renderBillItems();
       attachHandlers();
     },
